@@ -254,9 +254,9 @@ NFA *construct_nfa_and(NFA *s,NFA *t){
 	
 	(s->get_tail())->cat( t->get_head() );
 
-	delete( t->get_head() );  //释放t的头结点
-
 	s->set_tail( t->get_tail() );
+
+	delete( t->get_head() );  //释放t的头结点
 
 	return s;
 }
